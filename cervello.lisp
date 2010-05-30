@@ -16,10 +16,7 @@
 
 (defun split-without-punctuation (str)
   "Split a string without punctuation."
-  ;;; Ask nixeagle about this tomorrow.
-  (multiple-value-bind (lst len)
-      (split-sequence #\  (remove-punctuation str))
-    lst))
+  (nth-value 0 (split-sequence #\  (remove-punctuation str)))) ; 0 is the list
 
 (defun group (lst w)
   "Split the list of words into groups based on w."
